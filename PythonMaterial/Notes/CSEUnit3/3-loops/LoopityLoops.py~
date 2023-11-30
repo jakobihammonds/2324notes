@@ -1,0 +1,14 @@
+mylist = []
+for i in range(30):
+    mylist.append(int(input("Number Please: ")))
+
+def Instructions():
+    print("Sum of list")
+    print(sum(mylist))
+    print("Smallest number of list")
+    print(min(mylist))
+    print("Largest number of list")
+    print(max(mylist))
+    print("middle number of list")
+    print(sum(mylist)/len(mylist))
+Instructions()

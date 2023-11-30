@@ -1,0 +1,5 @@
+print("Mad Libs 2023 V1")
+print()
+input("Give me an Action Word")
+input("Give me a Noun")
+

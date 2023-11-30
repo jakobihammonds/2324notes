@@ -1,0 +1,29 @@
+#string - non-primitive data type
+#   sequence of data put tiogether
+#sequence - combination or collection of info
+# type o data struct
+# list, typle, dictionary, array, array list
+#
+name = "billy"
+password = "123456"
+#string = "" or ''
+# but for every quote uneed an end 
+
+output = f"welcome, {name}!"
+#{} inject variables
+stuff = f"here is 2+2={2+2"
+print(output,stuff)
+
+'''
+in other words 
+ " string value + mathvalue = error
+ f"var {}" converts data types
+ '''
+ print(f"")
+
+ #escape characters
+ #\n -enter
+ #\t-tab button
+ #\s-spacebar
+ #\"-quote button
+

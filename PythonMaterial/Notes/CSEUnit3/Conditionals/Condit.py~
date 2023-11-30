@@ -1,5 +1,0 @@
-email = input("Enter your email.")
-PW = input("Enter a Password")
-user = email[:email.index("@")]
-print("Username:"+user)
-print("Password:"+PW)

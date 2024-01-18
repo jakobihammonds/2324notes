@@ -1,0 +1,22 @@
+mylist = []
+
+mylist.append(int(input("Number Please: ")))
+mylist.append(int(input("Number Please: ")))
+mylist.append(int(input("Number Please: ")))
+mylist.append(int(input("Number Please: ")))
+mylist.append(int(input("Number Please: ")))
+mylist.append(int(input("Number Please: ")))
+mylist.append(int(input("Number Please: ")))
+mylist.append(int(input("Number Please: ")))
+mylist.append(int(input("Number Please: ")))
+mylist.append(int(input("Number Please: ")))
+
+
+print("Sum of list")
+print(sum(mylist))
+print("Smallest number of list")
+print(min(mylist))
+print("Largest number of list")
+print(max(mylist))
+print("middle number of list")
+print(sum(mylist)/len(mylist))

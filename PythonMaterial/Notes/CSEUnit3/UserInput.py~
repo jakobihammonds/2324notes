@@ -1,0 +1,3 @@
+print("Hey, how was break?")
+ui = input() 
+print(ui)

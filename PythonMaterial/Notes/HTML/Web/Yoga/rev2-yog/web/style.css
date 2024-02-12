@@ -1,0 +1,63 @@
+/*  cascading styling sheets
+        even with one line of code, same comment
+*/
+/*selector/tag section
+    flow the css the same way as html
+    (HTML-H1,NAV,P,FOOTER)
+    CSS- (BODY,H1,NAV,P,FOOTER)*/
+body{
+    background-color: #F5F5F5;
+    color: #40407A;
+    font-family: Verdana, Arial, sans-serif;
+}
+header{
+    background-image: url("images/lilyheader.jpg");
+    background-size: 100% 100%;
+    height: 150px;
+    text-align: left;
+}
+h1{
+    line-height: 200%;
+    padding-top: 50px;
+    padding-left: 2em;
+}
+h2{
+    font-size: 200%;
+
+}
+
+nav{
+    text-align: center;
+    font-weight: bold;
+    padding: 1em;
+
+}
+
+nav a{
+    text-decoration: none;
+
+}
+
+#hero{
+    text-align: center;
+}
+
+footer{
+    background-color: #80CBC4;
+    font-size: .6em;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    padding: 1em;
+}
+/*class section*/
+.studio{
+    color: #40407A;
+    font-style: italic;
+}
+/*id section*/
+#wrapper{
+    margin-right: auto;
+    margin-left: auto;
+    width:80%;
+}

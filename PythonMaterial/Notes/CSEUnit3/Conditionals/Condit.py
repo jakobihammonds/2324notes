@@ -14,15 +14,15 @@ ans = 7
 guess = input("number:")
 if guess < ans:
     print("guess higher")
-elif guess > answer:
+elif guess > ans:
     print("guess lower")
 else:
     print("correct")
 
 #
 siriquestion=input("bruuuup:")
-if siri question = " billion questions":
-    print"billion answers"
+if siriquestion==("billion questions"):
+    print("billion answers")
 
 
     

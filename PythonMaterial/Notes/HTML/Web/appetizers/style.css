@@ -1,0 +1,49 @@
+/*  cascading styling sheets
+        even with one line of code, same comment
+*/
+/*selector/tag section
+    flow the css the same way as html
+    (HTML-H1,NAV,P,FOOTER)
+    CSS- (BODY,H1,NAV,P,FOOTER)*/
+    body{
+        background-color: #F5F5F5;
+        color: #1d1d2f;
+        font-family: Verdana, Arial, sans-serif;
+    }
+    header{
+        background-color: #d48a5f;
+        text-align: center;
+        
+    }
+    h1{
+        line-height: 200%;
+        font-family: Verdana, Arial, sans-serif;
+        font-style: italic;
+
+    }
+    table{
+        vertical-align: middle;
+        line-height: 150%;
+        font-size: 1.2em;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: auto;
+        width: 90%;
+        border: 3px solid rgb(0, 0, 0);
+        padding: 20px;
+
+    }
+    footer{
+        background-color: #6f5e5e;
+        font-size: .6em;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: italic;
+        padding: 8px;
+    }
+    /*class section*/
+    .studio{
+        color: #40407A;
+        font-style: italic;
+    }
+    /*id section*/

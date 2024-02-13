@@ -1,136 +1,151 @@
-#---import statements---
 import turtle as t
 import random as r
 import Leaderboard as lb
-import time as c
-
-
-
 
 #---global variables and objects---
 #---game configuration--
-wn=t.Screen()
-wn.addshape("turtle.gif")
-score=0
-timer=15
-interval=1000
-screenClicks = -1
-gameOn = False
-FILENAME="db.txt"
-#    tuple("font style",fontSize,"font type - bold, italic, normal")
-fontSetup=("Times New Roman",30,"normal")
+wn = t.Screen()
+score = 0
+timer = 15
+interval = 1000
+total_clicks = 0
+FILENAME = "db.txt"
+fontSetup = ("Times New Roman", 30, "normal")
 
 trent = t.Turtle()
-trent.shape("turtle.gif")
-trent.shapesize(4)
+trent.shape("turtle")
+trent.shapesize(2)
+trent.fillcolor("purple")
 trent.speed(0)
+trent_size = 2
+trent.hideturtle()
 trent.penup()
 
 scoreKeeper = t.Turtle()
 scoreKeeper.penup()
-scoreKeeper.teleport(100,200)
+scoreKeeper.teleport(100, 200)
 scoreKeeper.pendown()
 scoreKeeper.speed(0)
-scoreKeeper.hideturtle()   #still writes, but can't see the turtle
+scoreKeeper.hideturtle()
 
 timeKeeper = t.Turtle()
 timeKeeper.penup()
-timeKeeper.teleport(-100,200)
+timeKeeper.teleport(-100, 200)
 timeKeeper.pendown()
 timeKeeper.speed(0)
-timeKeeper.hideturtle()   #still writes, but can't see the turtle
+timeKeeper.hideturtle()
 
-#
-start = t.Turtle()
-start.teleport(-100,200)
-start.pendown()
-start.speed(0)
-start.hideturtle()
-start.write(f"Click to start",font=fontSetup)
-#---functions---
-def trentClicked(x,y):
-     # print(x,y)
-     moveTrent()
+
+#---functions--
+def clickAccuracy():
+     global total_clicks
+     total_clicks +=1
+     updateAccuracy()
      updateScore()
 
+def trentClicked(x, y):
+  global score, trent_size
+  if trent_size > 0.5:
+    trent_size *= 0.5
+    trent.shapesize(trent_size)
+  else:
+    trent_size = 2
+    trent.shapesize(trent_size)
+  trent.penup()
+  trent.setpos(x, y)
+  trent.pendown()
+  if trent_size == 2:
+       trent.circle(20)
+  elif trent_size ==1:
+       trent.circle(10)
+  elif trent_size==.5:
+       trent.circle(5)
+  moveTrent()
+  
+
 def moveTrent():
-     # width,height=t.screensize()
-     # print(width,height)
-     newX=r.randint(-300,300)
-     newY=r.randint(-300,300)
-     trent.goto(newX,newY)
-          
-     
+  newX = r.randint(-300, 300)
+  newY = r.randint(-300, 300)
+
+  while abs(newX - 100) < 50 or abs(
+      newY - 200) < 50:  # Checking for overlap with scoreKeeper
+    newX = r.randint(-300, 300)
+    newY = r.randint(-300, 300)
+
+  while abs(newX +
+            100) < 50 or abs(newY +
+                             200) < 50:  # Checking for overlap with timeKeeper
+    newX = r.randint(-300, 300)
+    newY = r.randint(-300, 300)
+
+  wn.bgcolor("red")
+  trent.teleport(newX, newY)
+  wn.bgcolor("white")
+
 
 def updateScore():
-     global score
-     score+=1
-     #write the score to the screen
-     scoreKeeper.clear()
-     scoreKeeper.write(f"Score: {score}",font=fontSetup)  #drawing the score
+  global score
+  scoreKeeper.teleport(100, 200)
+  score += 1
+  scoreKeeper.clear()
+  scoreKeeper.write(f"Score: {score}", font=fontSetup)
 
-def screenClicked(x,y):
-     global screenClicks
-     wn.bgcolor("red")  #this runs anytime the screen or turt is clicked
-     c.sleep(.3)
-     wn.bgcolor("white")
-     screenClicks += 1
-     global gameOn
-     gameOn = True
-     start.clear()
-     #
-
-
-     
-#game over function............
-def manageLeaderboard():
-     global score
-     namesList=lb.getNames("db.txt")
-     scoresList=lb.getScores("db.txt")
-     #if the current score is in the leaderboard
-     if score >= int(scoresList[-1]):                  #[-1] grabs last item in list
-     #    update the leaderboard
-          playerName=input("Congrats, you made the leader board!\n\tName Please:")
-          lb.updateLeaderboard("db.txt",namesList,scoresList,playerName,score)
-     #draw the leaderboard
-     lb.draw_leaderboard(False,namesList,scoresList,scoreKeeper,10)
-
-def updateTimer():
-     global timer
-     #subtract one from the time
-     timeKeeper.clear()
-     if gameOn == True:
-          timer-=1
-     #draw the time to the screen
-          
-          if timer<=0:
-               timeKeeper.write("Time's Up!",font=fontSetup)
-               trent.hideturtle()
-               manageLeaderboard()
-          else:
-               timeKeeper.write(f"Time: {timer}",font=fontSetup)
-               timeKeeper.getscreen().ontimer(updateTimer,interval)        #example of recursion
-
-
-     
-#---events---   Gold Block from MIT Event Handlers
-#object.method(command)
-trent.onclick(trentClicked)    
-wn.onclick(screenClicked)
-wn.ontimer(updateTimer,interval)
-#in turtle, all objects are clickable 
 
 #
+
+
+#
+def updateAccuracy():
+  scoreKeeper.teleport(170, 185)
+  accuracy = score / total_clicks * 100
+  accuracy = round(accuracy, 2)
+  scoreKeeper.write(f"Accuracy: {accuracy}%", align="center")
+
+
+def startGame():
+  start = wn.textinput("Start Game", "Press Enter to Start")
+  if start == "":
+    updateTimer()
+    trent.showturtle()
+  else:
+    wn.bye()
+
+
+def manageLeaderboard():
+  global score
+  namesList = lb.getNames("db.txt")
+  scoresList = lb.getScores("db.txt")
+  if score >= int(scoresList[-1]):
+    playerName = input("Congrats, you made the leaderboard!\n\tName Please:")
+    lb.updateLeaderboard("db.txt", namesList, scoresList, playerName, score)
+  lb.drawLeaderboard(False, namesList, scoresList, scoreKeeper, 10)
+
+
+def updateTimer():
+  global timer
+  timer -= 1
+  timeKeeper.clear()
+  if timer <= 0:
+    timeKeeper.write("Time's Up!", font=fontSetup)
+    trent.hideturtle()
+    manageLeaderboard()
+  else:
+    timeKeeper.write(f"Time: {timer}", font=fontSetup)
+    timeKeeper.getscreen().ontimer(updateTimer, interval)
+
+
+#
+#---events---
+trent.onclick(trentClicked)
+wn.onscreenclick(clickAccuracy)
+wn.listen()
+wn.ontimer(startGame, 1000)
 
 #--main loop---
 wn.mainloop()
 
-
-'''
-     Features List:
-     1. Click a turtle
-     2. Move turtle randomly
-     3. Score
-     4. Timer
-     5. High Score
-'''
+# Call drawLeaderboard function when timer reaches 0
+if timer <= 0:
+  leader_names = lb.getNames(FILENAME)
+  leader_scores = lb.getScores(FILENAME)
+  lb.drawLeaderboard(False, leader_names, leader_scores, scoreKeeper, score)

@@ -1,253 +1,373 @@
-@media(min-width: 1024px) {
-    body {
-        margin: 0;
-        background-color: #3f2860;
-        color: #40407a;
-        font-family: Verdana, Arial, sans-serif;
-    }
-    header {
-        /* background-color: #80cbc4; */
-        background-image: url("Assets/sunrise.jpg");
-        background-size: 100% 100%;
-        background-color: #40407a;
-        color: #fff;
-        font-size: 120%;
-        margin-top: 50px;
-        min-height: 200px;
-        text-align: left;
-    }
-    header a:link { text-decoration: none; display: block; color: #fff; }
-    header a:visited { text-decoration: none; display: block; color: #fff; }
-    header a:hover { text-decoration: none; display: block; color: #fff; }
-    h1 {
-        line-height: 200%;
-        padding-top: 50px;
-        padding-left: 2em;
-    }
-    h2 {
-        font-size: 200%;
-    }
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        text-align: right;
-        padding: 0.5em;
-        padding-right: 0;
-        width: 100%;
-        background-color: white;
-        margin: 0;
-        z-index: 9999;
-    }
-    nav a {
-        text-decoration: none;
-        display: block;
-    }
-    nav a:link { color: #3f2860; }
-    nav a:visited { color: #497777; }
-    nav a:hover { color: #a26100; }
-    nav ul {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: flex-end;
-        margin: 0;
-        font-size: 1.2em;
-        list-style-type: none;
-    }
-    nav li {
-        width: 7em;
-        padding: 0 1em 0 1em;
-        display: inline;
-    }
-    footer {
-        background-color: #80cbc4;
-        font-size: 0.6em;
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-        font-style: italic;
-        padding: 1em;
-    }
-    section {
-        padding-left: 2em;
-        padding-right: 2em;
-    }
-    .studio {
-        color: #40407a;
-        font-style: italic;
-    }
-    .home {
-        height: 50vh;
-        padding-left: 8em;
-        padding-top: 5em;
-    }
-    .content {
-        height: 30vh;
-        padding-left: 8em;
-        padding-top: 1em;
-    }
-    #wrapper {
-        margin-right: auto;
-        margin-left: auto;
-        width: 80%;
-        background-color: #f5f5f5;
-    }
-    #hero {
-        text-align: center;
-    }
-    #mobile {
-        display: none;
-    }
-    #desktop {
-        display: inline;
-    }
-    #mathero {
-        background-image: url(Assets/yogamat.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: block;
-        height: 300px;
-        padding-bottom: 1em;
-    }
-    #loungehero {
-        background-image: url(Assets/yogalounge.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: block;
-        height: 300px;
-        padding-bottom: 1em;
-    }
-    #flow {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
+/*full screen mode*/
+@media(min-width:1024px){
+     body{
+          margin:0;
+          background-color: #3F2860;
+          color:#40407A;
+          font-family: Verdana, Arial, sans-serif;
+     }
+     header{
+          /* background-color: #80CBC4; */
+          background-image: url("images/sunrise.jpg");
+          background-size: 100% 100%;  /*stretch the image to 100% width and 100% height*/
+          background-color: #40407A;
+          color:#FFF;
+          font-size:120%;
+          margin-top: 50px;
+          min-height: 200px;
+          text-align: left;
+     }
+     header a:link{text-decoration: none;display:block;color:#FFF;}
+     header a:visited{text-decoration: none;display:block;color:#FFF;}
+     header a:hover{text-decoration: none;display:block;color:#FFF;}
+     h1{
+          line-height: 200%;
+          padding-top: 50px;
+          padding-left: 2em;
+     }
+     h2{
+          font-size: 200%;
+     }
+     nav{
+          position:fixed;    /*This is where you can HARDCODE a location*/
+          top:0;
+          left:0;
+          text-align: right;
+          padding: .5em;
+          padding-right: 0;
+          width: 100%;        /*fills up the top of the screen*/
+          background-color: white;
+          margin:0;
+          z-index:9999;
+     }
+     nav a{                        /* this style is only for <a> in the nav*/
+          text-decoration: none;
+          display: block;
+     }
+     /*   add styling to the a links when one of these happens   */
+     nav a:link{color:#3F2860}                                   /*just sitting here*/
+     nav a:visited{color:#497777}                                /*after visiting*/
+     nav a:hover{color:#A26100;}                                 /*mouse hover over*/
+     nav ul{
+          display: flex;
+          flex-wrap: nowrap;       /*nowrap means should be in one line*/
+          justify-content: flex-end;
+          margin: 0;
+          font-size: 1.2em;
+          list-style-type: none;
+     }
+     nav li{
+          width: 7em;
+          padding: 0 1em 0 1em;  /*top and bottom are 0 and left and right are 1em*/
+          display:inline;
+     }
+     footer{
+          background-color: #80CBC4;
+          font-size: .6em;
+          text-align: center;
+          font-family: Arial, Helvetica, sans-serif;
+          font-style: italic;
+          padding: 1em;
+     }
+     section{
+          padding-left: 2em;
+          padding-right: 2em;  
+     }
+     /* class section */
+     .studio{  /* class for the name of the studio */
+          color:#40407A;
+          font-style: italic;
+     }
+     .home{                   /*home class applied to header on the index page*/
+          height: 50vh;       /*measurement based on device screen size*/
+          padding-left: 8em;
+          padding-top: 5em;
+     }
+     .content{                /*content class applied to header on not the index page*/
+          height: 30vh;       /*measurement based on device screen size*/
+          padding-left: 8em;
+          padding-top: 1em;
+     }
+     /* id section */
+     #wrapper{   
+          padding: 2em;
+          margin: auto;  /*Will help center the text on the screen*/
+          width:80%;
+          background-color: #F5F5F5;
+     }
+     #hero{                                  /*typical id name for pictures*/
+          text-align: center;
+     }
+     #mobile{
+          display:none;       /*invisible tag*/
+     }
+     #desktop{
+          display:inline;     /*visible tag*/
+     }
+     #mathero{
+          background-image: url(images/yogamat.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          display: block;
+          height: 300px;
+          padding-bottom: 1em;
+     }
+     #loungehero{
+          background-image: url(images/yogalounge.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          display: block;
+          height: 300px;
+          padding-bottom: 1em;
+     }
+     #flow{
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+     }
 }
 
-@media(min-width: 600px) {
-    body {
-        margin: 0;
-        background-color: #3f2860;
-        color: #40407a;
-        font-family: Verdana, Arial, sans-serif;
-    }
-    header {
-        /* background-color: #80cbc4; */
-        background-image: url("Assets/sunrise.jpg");
-        background-size: 100% 100%;
-        background-color: #40407a;
-        color: #fff;
-        font-size: 120%;
-        margin-top: 50px;
-        min-height: 200px;
-        text-align: left;
-    }
-    header a:link { text-decoration: none; display: block; color: #fff; }
-    header a:visited { text-decoration: none; display: block; color: #fff; }
-    header a:hover { text-decoration: none; display: block; color: #fff; }
-    h1 {
-        line-height: 200%;
-        padding-top: 50px;
-        padding-left: 2em;
-    }
-    h2 {
-        font-size: 200%;
-    }
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        text-align: right;
-        padding: 0.5em;
-        padding-right: 0;
-        width: 100%;
-        background-color: white;
-        margin: 0;
-        z-index: 9999;
-    }
-    nav a {
-        text-decoration: none;
-        display: block;
-    }
-    nav a:link { color: #3f2860; }
-    nav a:visited { color: #497777; }
-    nav a:hover { color: #a26100; }
-    nav ul {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: flex-end;
-        margin: 0;
-        font-size: 1.2em;
-        list-style-type: none;
-    }
-    nav li {
-        width: 7em;
-        padding: 0 1em 0 1em;
-        display: inline;
-    }
-    footer {
-        background-color: #80cbc4;
-        font-size: 0.6em;
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-        font-style: italic;
-        padding: 1em;
-    }
-    section {
-        padding-left: 2em;
-        padding-right: 2em;
-    }
-    .studio {
-        color: #40407a;
-        font-style: italic;
-    }
-    .home {
-        height: 50vh;
-        padding-left: 8em;
-        padding-top: 5em;
-    }
-    .content {
-        height: 30vh;
-        padding-left: 8em;
-        padding-top: 1em;
-    }
-    #wrapper {
-        margin-right: auto;
-        margin-left: auto;
-        width: 80%;
-        background-color: #f5f5f5;
-    }
-    #hero {
-        text-align: center;
-    }
-    #mobile {
-        display: none;
-    }
-    #desktop {
-        display: inline;
-    }
-    #mathero {
-        background-image: url(Assets/yogamat.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: block;
-        height: 300px;
-        padding-bottom: 1em;
-    }
-    #loungehero {
-        background-image: url(Assets/yogalounge.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: block;
-        height: 300px;
-        padding-bottom: 1em;
-    }
-    #flow {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
+/*tablet screen mode*/
+@media(min-width:600px){
+     body{
+          margin:0;
+          background-color: #3F2860;
+          color:#40407A;
+          font-family: Verdana, Arial, sans-serif;
+     }
+     header{
+          /* background-color: #80CBC4; */
+          background-image: url("images/sunrise.jpg");
+          background-size: 100% 100%;  /*stretch the image to 100% width and 100% height*/
+          background-color: #40407A;
+          color:#FFF;
+          font-size:90%;
+          margin-top: 50px;
+          min-height: 200px;
+          text-align: left;
+     }
+     header a:link{text-decoration: none;display:block;color:#FFF;}
+     header a:visited{text-decoration: none;display:block;color:#FFF;}
+     header a:hover{text-decoration: none;display:block;color:#FFF;}
+     h2{
+          font-size: 200%;
+     }
+     nav{
+          position:fixed;    /*This is where you can HARDCODE a location*/
+          top:0;
+          left:0;
+          text-align: right;
+          padding: .5em;
+          padding-right: 0;
+          width: 100%;        /*fills up the top of the screen*/
+          background-color: white;
+          margin:0;
+          z-index:9999;
+     }
+     nav a{                        /* this style is only for <a> in the nav*/
+          text-decoration: none;
+          display: block;
+     }
+     /*   add styling to the a links when one of these happens   */
+     nav a:link{color:#3F2860}                                   /*just sitting here*/
+     nav a:visited{color:#497777}                                /*after visiting*/
+     nav a:hover{color:#A26100;}                                 /*mouse hover over*/
+     nav ul{
+          display: flex;
+          flex-wrap: nowrap;       /*nowrap means should be in one line*/
+          justify-content: flex-end;
+          margin: 0;
+          font-size: 1.2em;
+          list-style-type: none;
+     }
+     nav li{
+          width: 7em;
+          padding: 0 1em 0 1em;  /*top and bottom are 0 and left and right are 1em*/
+          /* display:inline; */   /*This will allow it to move if necessary*/
+     }
+     footer{
+          font-size: .6em;
+          text-align: center;
+          font-family: Arial, Helvetica, sans-serif;
+          font-style: italic;
+     }
+     section{
+          padding-left: 2em;
+          padding-right: 2em;  
+     }
+     /* class section */
+     .studio{  /* class for the name of the studio */
+          color:#40407A;
+          font-style: italic;
+     }
+     .home{                   /*home class applied to header on the index page*/
+          height: 20vh;       /*measurement based on device screen size*/
+          padding-left: 10%;
+          padding-top: 2em;
+     }
+     .content{                /*content class applied to header on not the index page*/
+          height: 20vh;       /*measurement based on device screen size*/
+          padding-left: 10%;
+          padding-top: 2em;
+     }
+     /* id section */
+     #wrapper{   
+          padding: 2em;
+          background-color: #F5F5F5;
+     }
+     #mobile{
+          display:none;       /*invisible tag*/
+     }
+     #desktop{
+          display:inline;     /*visible tag*/
+     }
+     #mathero{
+          background-image: url(images/yogamat.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          display: block;
+          height: 300px;                /*May have to tweak depending on image*/
+          padding-bottom: 1em;
+     }
+     #loungehero{
+          background-image: url(images/yogalounge.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          display: block;
+          height: 300px;                /*May have to tweak depending on image*/
+          padding-bottom: 1em;
+     }
+     #flow{
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+     }
+     #clear{
+          clear:both;
+     }
 }
 
-* {
-    box-sizing: border-box;
+/*mobile screen mode*/
+@media(max-width:600px){
+     body{
+          margin:0;
+          background-color: #3F2860;
+          color:#40407A;
+          font-family: Verdana, Arial, sans-serif;
+     }
+     header{
+          /* background-color: #80CBC4; */
+          background-image: url("images/sunrise.jpg");
+          background-size: 100% 100%;  /*stretch the image to 100% width and 100% height*/
+          background-color: #40407A;
+          color:#FFF;
+          font-size:90%;
+          margin-top: 50px;
+          min-height: 200px;
+          text-align: left;
+     }
+     header a:link{text-decoration: none;display:block;color:#FFF;}
+     header a:visited{text-decoration: none;display:block;color:#FFF;}
+     header a:hover{text-decoration: none;display:block;color:#FFF;}
+     /*h1{
+          line-height: 200%;
+          padding-top: 50px;
+          padding-left: 2em;
+     }*/
+     h2{
+          font-size: 200%;
+     }
+     nav{
+          position:fixed;    /*This is where you can HARDCODE a location*/
+          top:0;
+          left:0;
+          text-align: right;
+          padding: .5em;
+          padding-right: 0;
+          width: 100%;        /*fills up the top of the screen*/
+          background-color: white;
+          margin:0;
+          z-index:9999;
+     }
+     nav a{                        /* this style is only for <a> in the nav*/
+          text-decoration: none;
+          display: block;
+     }
+     /*   add styling to the a links when one of these happens   */
+     nav a:link{color:#3F2860}                                   /*just sitting here*/
+     nav a:visited{color:#497777}                                /*after visiting*/
+     nav a:hover{color:#A26100;}                                 /*mouse hover over*/
+     nav ul{
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;               /*Needed when wrapping*/       
+          margin: 0;
+          font-size: 1.2em;
+          list-style-type: none;
+     }
+     nav li{
+          width: 40%;
+          padding: 0 1em 0 1em;  /*top and bottom are 0 and left and right are 1em*/
+          display:inline;
+     }
+     footer{
+          font-size: .6em;
+          text-align: center;
+          font-family: Arial, Helvetica, sans-serif;
+          font-style: italic;
+     }
+     section{
+          padding-left: .5em;
+          padding-right: .5em;  
+     }
+     /* class section */
+     .studio{  /* class for the name of the studio */
+          color:#40407A;
+          font-style: italic;
+     }
+     .home{                   /*home class applied to header on the index page*/
+          height: 20vh;       /*measurement based on device screen size*/
+          padding-left: 10%;
+          padding-top: 2em;
+     }
+     .content{                /*content class applied to header on not the index page*/
+          height: 20vh;       /*measurement based on device screen size*/
+          padding-left: 10%;
+          padding-top: 2em;
+     }
+     /* id section */
+     #wrapper{   
+          padding: 2em;
+          background-color: #F5F5F5;
+     }
+     #mobile{
+          display:inline;     /*visible tag*/
+     }
+     #desktop{
+          display:none;       /*invisible tag*/
+     }
+     /*#mathero{
+          background-image: url(images/yogamat.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          display: block;
+          height: 300px;
+          padding-bottom: 1em;
+     }
+     #loungehero{
+          background-image: url(images/yogalounge.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          display: block;
+          height: 300px;
+          padding-bottom: 1em;
+     }
+     #flow{
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+     }*/
 }
+
+/* global property or global var */
+* {box-sizing: border-box;}

@@ -1,0 +1,5 @@
+p,12
+ban,11
+jako,11
+Jakobi,11
+jham,10

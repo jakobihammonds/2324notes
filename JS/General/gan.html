@@ -1,0 +1,21 @@
+<head>
+     <!--Create a script that allows the user to guess a number between 0 and 10
+          if they guess to high or to low, notify them-->
+     <script>
+          var secret = 7
+          var guess = prompt("guess a number btwn 0-10")
+          while(guess!=secret){
+               if(guess<secret){
+                    alert("guessed to low")
+               }
+               else if(guess>secret){
+                    alert("guessed to high")
+               }
+               guess = prompt("guess a number btwn 0-10")
+          }
+          alert("just right")
+     </script>
+</head>
+<body>
+
+</body>

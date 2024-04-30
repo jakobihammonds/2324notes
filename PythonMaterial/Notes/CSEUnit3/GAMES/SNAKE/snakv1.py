@@ -3,6 +3,8 @@ import turtle as t
 import random as r
 import time
 ##---Game Configuration
+t.title("Snake")
+pause = False
 bodyParts = []
 wn = t.Screen()
 wn.setup(width=600,height=600)
@@ -24,6 +26,10 @@ food.color("orange")
 
 ##---Functions
 #game over
+def pauseGame():
+    global pause
+    
+
 def hideTheBody():
     global bodyParts
     head.teleport(0,0)

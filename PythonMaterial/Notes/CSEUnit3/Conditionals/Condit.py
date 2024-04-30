@@ -22,7 +22,10 @@ else:
 #
 siriquestion=input("bruuuup:")
 if siriquestion==("billion questions"):
-    print("billion answers")
+        print("billion answers")
+else:
+        print("lock in")
+
 
 
     

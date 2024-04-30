@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <script>console.log("head script")</script>
+     </head>
+     <body>
+          <h1 id="one">Welcome</h1>
+          <p>This is a welcome message.  Welcome!</p>
+          <p>This is the subtitle or second p tag</p>
+          <input type="button" id="btnClick" value="Click here!"/>
+          <script>
+                    console.log("body script")
+                    var text = document.getElementById("one").innerHTML;  //this gets the html in the element w/ id of one
+                    //alert("The info "+text);
+                    //console.log(document)
+                    //console.dir(document)
+                    var para = document.getElementsByTagName("p");
+                    //alert("The p tag info "+para[0].innerHTML);
+                    console.log(para);
+                    document.getElementById("one").style.backgroundColor="#4b0082"
+                    document.getElementById("one").style.color="#0000FF"
+
+                    document.getElementById("btnClick").style.backgroundColor="#ff00FF"
+                    document.getElementById("btnClick").value="Click Me!"
+                    console.dir(document.getElementById("btnClick"))
+                    //                            button.setTheClickEvent to clicked()
+                    document.getElementById("btnClick").addEventListener("click",clicked);
+                    function clicked(){
+                         alert("Button was clicked!  yo.")
+                    }
+
+                    document.writeln("prints to the screen - screen being the web page")
+                    document.write("prints to the screen - screen being the web page")
+                    
+               </script>
+     </body>
+</html>

@@ -1,0 +1,15 @@
+<form name="submit-to-google-sheet-test">
+    <input name="email" type="email" placeholder="Email" required>
+    <button type="submit">Sign Me Up</button>
+</form>
+<script>
+    const scriptURL='https://script.google.com/macros/s/AKfycbw2GYaMaZQmSJb0wR2Vho39hSiF27yVlFbUBNyrgwH3UAS2O4uLWXu4JtlzoRMC_my-/exec';
+    const form = document.forms['submit-to-google-sheet-test']
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+</script>
